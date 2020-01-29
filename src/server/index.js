@@ -1,10 +1,6 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
 //Body Parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,4 +14,11 @@ app.use(cors());
 const port = 8000;
 app.listen(port, () => {
   console.log(`Server running on ${port}`);
+});
+
+app.use(express.static('./dist'));
+
+//Routes
+app.get('/', (req, res) => {
+	res.send('./dist/index.html');
 });

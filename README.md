@@ -19,3 +19,5 @@ Blank Application Setup
    npm i -D @babel/core @babel/preset-env
 8. babel-loader (so babel and webpack work together)
    npm i -D babel-loader
+9. HTMLWebPackPlugin - https://webpack.js.org/plugins/html-webpack-plugin/
+   npm i -D html-webpack-plugin
