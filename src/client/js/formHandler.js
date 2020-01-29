@@ -1,5 +1,7 @@
 // const updateUI = require('./UpdateUI.js')
-const callAylienAPI = require('./callAylienAPI.js')
+import {port} from '../index.js';
+import { callAylienAPI } from './callAylienAPI.js'
+// const callAylienAPI = require('./callAylienAPI.js')
 
 const testValidURL = (URL) => {
     let pattern = /http|https:/;
@@ -8,6 +10,9 @@ const testValidURL = (URL) => {
 
 function handleSubmit(event) {
     event.preventDefault()
+
+    //test
+    testServer();
 
     //console.log(formURL)
     let formURL = document.getElementById('formURL').value
@@ -22,5 +27,15 @@ function handleSubmit(event) {
       // .then()
 }
 
+const testServer = async () => {
+  const response = await fetch(`${port}/test`);
+  try {
+    const newData = await response.json();
+    console.log(newData);
+    return newData;
+  }catch(error) {
+    console.log("error", error);
+  }
+};
 
 export { handleSubmit }

@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const app = express();
+const sampleAPIResp = require('./sampleAPI.js')
 // let aylienData = [];
 
 //Setup Aylient API
@@ -30,7 +31,8 @@ app.use(express.static('./dist'));
 
 //Callback functions
 const getAylienAPI = async (req, res) => {
-  console.log('Started getAylienAPI')
+  console.log('Started getAylienAPI');
+  console.log('req.params.formURL');
   const getData = await textapi.entities(req.params.formURL,
     function(error, response) {
     if (error === null) {
@@ -45,7 +47,12 @@ const getAylienAPI = async (req, res) => {
 
 //Routes
 app.get('/', (req, res) => {
-	res.send('./dist/index.html');
+	res.send('../../../dist/index.html');
 });
 
 app.get('/apiData/:formURL', getAylienAPI)
+
+app.get('/test', function (req, res) {
+    console.log('Test Server');
+    res.send(sampleAPIResp);
+});
