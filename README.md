@@ -14,3 +14,8 @@ Blank Application Setup
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 6. npm i webpack webpack-cli
 - https://webpack.js.org/concepts/
+7. Babel - https://babeljs.io/docs/en/
+   https://babeljs.io/docs/en/babel-preset-env
+   npm i -D @babel/core @babel/preset-env
+8. babel-loader (so babel and webpack work together)
+   npm i -D babel-loader
