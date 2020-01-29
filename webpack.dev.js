@@ -1,6 +1,7 @@
 const HTMLWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/client/index.js',
@@ -19,6 +20,12 @@ module.exports = {
 		template: './src/client/html/index.html',
 		filename: 'index.html'
 		}
-	)
+	),
+  new CleanWebpackPlugin({
+        dry: true,
+        verbose: true,
+        cleanStaleWebpackAssets: true,
+        protectWebpackAssets: false
+})
 ]
-}
+};
