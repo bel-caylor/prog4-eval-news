@@ -31,3 +31,6 @@ Blank Application Setup
 10. clean-webpack-plugin
   - $ npm i -D clean-webpack-plugin
   - https://webpack.js.org/guides/output-management/#cleaning-up-the-dist-folder
+11. Sass
+  - $ npm i -D style-loader node-sass css-loader sass-loader
+  - https://jestjs.io/docs/en/getting-started
