@@ -1,8 +1,26 @@
 import {port} from '../index.js';
+const updateUI = require('./UpdateUI.js');
 
 const callAylienAPI = async (formURL) => {
-  // const response = await fetch(`/apiData/${formURL}`);
-  const response = await fetch(`${port}/apiData/test`);
+  const data = {"URL":formURL};
+  const response = await fetch(`${port}/apiData`, {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {'Content-Type': 'application/json',},
+    body: JSON.stringify(data),
+  });
+  try {
+    const newData = await response.json();
+    console.log(newData);
+    updateUI(newData);
+    return newData;
+  }catch(error) {
+    console.log("error", error);
+  }
+};
+
+const testServer = async () => {
+  const response = await fetch(`${port}/test`);
   try {
     const newData = await response.json();
     console.log(newData);

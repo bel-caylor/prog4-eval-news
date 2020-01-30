@@ -32,17 +32,19 @@ app.use(express.static('./dist'));
 //Callback functions
 const getAylienAPI = async (req, res) => {
   console.log('Started getAylienAPI');
-  console.log('req.params.formURL');
-  const getData = await textapi.entities(req.params.formURL,
+  console.log(req.body.URL);
+  const getData = await textapi.entities(req.body.URL,
     function(error, response) {
     if (error === null) {
-      res.send(response.entities);
+        // setTimeout(function() {res.send(response.entities);}, 3000)
+        res.send(response.entities);
       console.log('Response sent');
     }else{
     console.log("error:",  error);
     console.log(textapi);
   }
   })
+
 };
 
 //Routes
@@ -50,7 +52,7 @@ app.get('/', (req, res) => {
 	res.send('../../../dist/index.html');
 });
 
-app.get('/apiData/:formURL', getAylienAPI)
+app.post('/apiData', getAylienAPI);
 
 app.get('/test', function (req, res) {
     console.log('Test Server');
