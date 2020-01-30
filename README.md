@@ -8,3 +8,5 @@ Blank Application Setup
   - $ npm install aylien_textapi
 2. Dotenv
   - $ npm install dotenv
+3. Jest
+ - $ npm install --save-dev jest
