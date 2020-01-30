@@ -1,4 +1,4 @@
-const sum = require('../src/client/js/formHandler.js');
+const sum = require('../formHandler.js');
 
 test('testValidURL', () => {
   expect(testValidURL('test')).toBe(false);
