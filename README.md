@@ -11,7 +11,8 @@ Blank Application Setup
 3. Jest
  - $ npm install --save-dev jest
  - $ npm i -D babel-jest @babel/core @babel/preset-env
+ - $ npm i --save @babel/runtime
+ - $ npm i -D @babel/plugin-transform-runtime
 
  Working on getting Jest to work with Webpack
- it fails with scss and async
- https://jestjs.io/docs/en/webpack
+ ReferenceError: regeneratorRuntime is not defined
