@@ -14,3 +14,7 @@ Blank Application Setup
  - $ npm i --save @babel/runtime
  - $ npm i -D @babel/plugin-transform-runtime
  - $ npm i node-fetch --save
+4. Webpack production
+ - $ npm install --save-dev mini-css-extract-plugin
+ - $ npm install terser-webpack-plugin --save-dev
+ - $ npm install --save-dev optimize-css-assets-webpack-plugin
