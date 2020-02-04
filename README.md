@@ -13,3 +13,4 @@ Blank Application Setup
  - $ npm i -D babel-jest @babel/core @babel/preset-env
  - $ npm i --save @babel/runtime
  - $ npm i -D @babel/plugin-transform-runtime
+ - $ npm i node-fetch --save

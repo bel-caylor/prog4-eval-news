@@ -1,22 +1,28 @@
     //Add Locations
 const updateUI = (allData) => {
-    const HTMLresults = "<h1>Form Results</h1><div id=\"location\" class=\"entity\"></div><div id=\"organization\" class=\"entity\"></div><div id=\"person\" class=\"entity\"></div><div id=\"keyword\" class=\"entity\"></div>"
+    let HTMLresults = "<h1>Form Results</h1><div id=\"location\" class=\"entity\"><h1 class=\"sectionHead\">Locations</h1></div>"
+    HTMLresults += "<div id=\"organization\" class=\"entity\"><h1 class=\"sectionHead\">Organizations</h1></div>"
+    HTMLresults += "<div id=\"person\" class=\"entity\"><h1 class=\"sectionHead\">People</h1></div>"
+    HTMLresults += "<div id=\"keyword\" class=\"entity\"><h1 class=\"sectionHead\">Keywords</h1></div>"
     document.getElementById('results').innerHTML = HTMLresults
 
     //Add Sections to HTML Results
-    addSection('keyword', allData.keyword);
-    addSection('organization', allData.organization);
-    addSection('person', allData.person);
+    document.getElementById('location').insertAdjacentHTML('beforeend', addSection('location', allData.location));
+    document.getElementById('keyword').insertAdjacentHTML('beforeend', addSection('keyword', allData.keyword));
+    document.getElementById('organization').insertAdjacentHTML('beforeend', addSection('organization', allData.organization));
+    document.getElementById('person').insertAdjacentHTML('beforeend', addSection('person', allData.person));
 };
 
 const addSection = (section, sections) => {
-  // const sections = allData.section
-  let header = "<h1>" + section + "</h1>"
+  // console.log(sections);
+  // let header = "<h1>" + section + "</h1>"
   let sectionHTML = "";
   sections.forEach((section) => {
     sectionHTML += "<div><a href=\"https://en.wikipedia.org/wiki/" + section + "\">" + section + "</a></div>"
   })
-  document.getElementById(section).innerHTML = sectionHTML
+  // document.getElementById(section).innerHTML = sectionHTML;
+  return sectionHTML;
 };
 
-module.exports = updateUI
+// module.exports = updateUI, addSection
+export { updateUI, addSection };

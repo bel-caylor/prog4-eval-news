@@ -1,5 +1,6 @@
 import {port} from '../index.js';
-const updateUI = require('./UpdateUI.js');
+import {updateUI} from './UpdateUI.js';
+// const updateUI = require('./UpdateUI.js');
 require("regenerator-runtime");
 const fetch = require("node-fetch");
 
