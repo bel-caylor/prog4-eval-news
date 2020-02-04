@@ -1,6 +1,7 @@
 import {port} from '../index.js';
 const updateUI = require('./UpdateUI.js');
 require("regenerator-runtime");
+const fetch = require("node-fetch");
 
 const callAylienAPI = async (formURL) => {
   const data = {"URL":formURL};
@@ -24,8 +25,8 @@ const testServer = async () => {
   const response = await fetch(`${port}/test`);
   try {
     const newData = await response.json();
-    console.log(newData);
-    return newData("Test");
+    console.log(newData.test);
+    return newData.test;
   }catch(error) {
     console.log("error", error);
   }

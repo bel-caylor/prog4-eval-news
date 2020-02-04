@@ -2,8 +2,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const app = express();
-const sampleAPIResp = require('./sampleAPI.js')
-// let aylienData = [];
+const sampleAPIResp = require('./sampleAPI.js');
+const testServerData = require('./testServer.js');
+// import {testServer} from './sampleAPI.js';
 
 //Setup Aylient API
 var AYLIENTextAPI = require('aylien_textapi');
@@ -56,5 +57,5 @@ app.post('/apiData', getAylienAPI);
 
 app.get('/test', function (req, res) {
     console.log('Test Server');
-    res.send(testServer);
+    res.send(testServerData);
 });

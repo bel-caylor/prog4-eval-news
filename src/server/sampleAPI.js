@@ -21,8 +21,4 @@ let sampleAPI = {
   }
 }
 
-let testServer = {
-  "test":"Server Running"
-}
-
-module.exports = sampleAPI, testServer
+module.exports = sampleAPI
