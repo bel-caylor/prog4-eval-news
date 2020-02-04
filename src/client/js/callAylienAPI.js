@@ -1,5 +1,6 @@
 import {port} from '../index.js';
 const updateUI = require('./UpdateUI.js');
+require("regenerator-runtime");
 
 const callAylienAPI = async (formURL) => {
   const data = {"URL":formURL};
@@ -24,10 +25,10 @@ const testServer = async () => {
   try {
     const newData = await response.json();
     console.log(newData);
-    return newData;
+    return newData("Test");
   }catch(error) {
     console.log("error", error);
   }
 };
 
-export { callAylienAPI };
+export { callAylienAPI, testServer };

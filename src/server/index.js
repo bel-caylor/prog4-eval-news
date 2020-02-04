@@ -22,7 +22,7 @@ const cors = require('cors');
 app.use(cors());
 
 //Setup Port
-const port = 8080;
+const port = 8090;
 app.listen(port, () => {
   console.log(`Server running on ${port}`);
 });
@@ -56,5 +56,5 @@ app.post('/apiData', getAylienAPI);
 
 app.get('/test', function (req, res) {
     console.log('Test Server');
-    res.send(sampleAPIResp);
+    res.send(testServer);
 });
