@@ -18,3 +18,5 @@ Blank Application Setup
  - $ npm install --save-dev mini-css-extract-plugin
  - $ npm install terser-webpack-plugin --save-dev
  - $ npm install --save-dev optimize-css-assets-webpack-plugin
+5. Service Workers
+ - $ npm install workbox-webpack-plugin --save-dev

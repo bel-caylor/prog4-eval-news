@@ -24,19 +24,7 @@
             <section>
 
             <section id="results">
-<!--
-                <div id="locations" class="entity">
 
-                </div>
-                <div id="organizations" class="entity">
-
-                </div>
-                <div id="people" class="entity">
-
-                </div>
-                <div id="keywords" class="entity">
-
-                </div> -->
             </section>
         </main>
 
@@ -44,6 +32,14 @@
             <p>Information from aylien.com API
             </p>
         </footer>
-
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>
